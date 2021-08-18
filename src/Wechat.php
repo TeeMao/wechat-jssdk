@@ -134,15 +134,12 @@ class Wechat
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getJsapiConfig(string $ticket)
+    public function getJsapiConfig(string $ticket, string $url)
     {
 
         $timestamp = time();
 
         $nonceStr = $this->createNonceStr();
-
-        $url = 'http://www.baidu.com';
-
 
         $signature = sha1($this->ASCII(['jsapi_ticket' => $ticket, 'timestamp' => $timestamp, 'nonceStr' => $nonceStr, 'url' => $url]));
 
