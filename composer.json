@@ -1,0 +1,22 @@
+{
+    "name": "teemao/wechat-jssdk",
+    "description": "微信jssdk相关API",
+    "type": "library",
+    "require": {
+        "php": ">=7.2",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Teemao\\WechatJssdk\\": "./src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TeeMao",
+            "email": "2421912186@qq.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
