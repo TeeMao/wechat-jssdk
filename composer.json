@@ -1,15 +1,20 @@
 {
     "name": "teemao/wechat-jssdk",
     "description": "微信jssdk相关API",
-    "type": "library",
+    "license": "MIT",
     "require": {
         "php": ">=7.2",
         "guzzlehttp/guzzle": "^7.0"
     },
-    "license": "MIT",
+    "require-dev": {},
     "autoload": {
         "psr-4": {
-            "Teemao\\WechatJssdk\\": "./src/"
+            "Teemao\\WechatJssdk\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Teemap\\WechatJssdk\\Test": "test"
         }
     },
     "authors": [

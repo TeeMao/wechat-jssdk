@@ -128,10 +128,6 @@ class SetCookie
      */
     public function setName($name): void
     {
-        if (!is_string($name)) {
-            trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing a string to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
-        }
-
         $this->data['Name'] = $name;
     }
 
@@ -152,10 +148,6 @@ class SetCookie
      */
     public function setValue($value): void
     {
-        if (!is_string($value)) {
-            trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing a string to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
-        }
-
         $this->data['Value'] = $value;
     }
 
@@ -176,10 +168,6 @@ class SetCookie
      */
     public function setDomain($domain): void
     {
-        if (!is_string($domain)) {
-            trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing a string to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
-        }
-
         $this->data['Domain'] = $domain;
     }
 
@@ -200,10 +188,6 @@ class SetCookie
      */
     public function setPath($path): void
     {
-        if (!is_string($path)) {
-            trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing a string to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
-        }
-
         $this->data['Path'] = $path;
     }
 
@@ -214,7 +198,7 @@ class SetCookie
      */
     public function getMaxAge()
     {
-        return null === $this->data['Max-Age'] ? null : (int) $this->data['Max-Age'];
+        return $this->data['Max-Age'];
     }
 
     /**
@@ -224,10 +208,6 @@ class SetCookie
      */
     public function setMaxAge($maxAge): void
     {
-        if (!is_int($maxAge)) {
-            trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing an int to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
-        }
-
         $this->data['Max-Age'] = $maxAge;
     }
 
@@ -248,10 +228,6 @@ class SetCookie
      */
     public function setExpires($timestamp): void
     {
-        if (!is_int($timestamp) && !is_string($timestamp)) {
-            trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing an int or string to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
-        }
-
         $this->data['Expires'] = \is_numeric($timestamp)
             ? (int) $timestamp
             : \strtotime($timestamp);
@@ -274,10 +250,6 @@ class SetCookie
      */
     public function setSecure($secure): void
     {
-        if (!is_bool($secure)) {
-            trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing a boolean to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
-        }
-
         $this->data['Secure'] = $secure;
     }
 
@@ -298,10 +270,6 @@ class SetCookie
      */
     public function setDiscard($discard): void
     {
-        if (!is_bool($discard)) {
-            trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing a boolean to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
-        }
-
         $this->data['Discard'] = $discard;
     }
 
@@ -322,10 +290,6 @@ class SetCookie
      */
     public function setHttpOnly($httpOnly): void
     {
-        if (!is_bool($httpOnly)) {
-            trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing a boolean to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
-        }
-
         $this->data['HttpOnly'] = $httpOnly;
     }
 

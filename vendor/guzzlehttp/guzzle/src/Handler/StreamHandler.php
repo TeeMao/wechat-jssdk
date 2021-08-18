@@ -237,11 +237,8 @@ class StreamHandler
             return true;
         });
 
-        try {
-            $resource = $callback();
-        } finally {
-            \restore_error_handler();
-        }
+        $resource = $callback();
+        \restore_error_handler();
 
         if (!$resource) {
             $message = 'Error creating resource: ';
